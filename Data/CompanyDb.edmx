@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CompanyDataContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dept">
+          <Key>
+            <PropertyRef Name="deptno" />
+          </Key>
+          <Property Name="deptno" Type="int" Nullable="false" />
+          <Property Name="dname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="emp">
+          <Key>
+            <PropertyRef Name="empno" />
+          </Key>
+          <Property Name="empno" Type="int" Nullable="false" />
+          <Property Name="ename" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="job" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mgr" Type="int" />
+          <Property Name="hiredate" Type="date" />
+          <Property Name="sal" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="comm" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="deptno" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="salgrade">
+          <Key>
+            <PropertyRef Name="grade" />
+          </Key>
+          <Property Name="grade" Type="int" Nullable="false" />
+          <Property Name="losal" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="hisal" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="CompanyDataContextStoreContainer">
+          <EntitySet Name="dept" EntityType="Self.dept" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="emp" EntityType="Self.emp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="salgrade" EntityType="Self.salgrade" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CompanyDataContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dept">
+          <Key>
+            <PropertyRef Name="deptno" />
+          </Key>
+          <Property Name="deptno" Type="Int32" Nullable="false" />
+          <Property Name="dname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="emp">
+          <Key>
+            <PropertyRef Name="empno" />
+          </Key>
+          <Property Name="empno" Type="Int32" Nullable="false" />
+          <Property Name="ename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mgr" Type="Int32" />
+          <Property Name="hiredate" Type="DateTime" Precision="0" />
+          <Property Name="sal" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="comm" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="deptno" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="salgrade">
+          <Key>
+            <PropertyRef Name="grade" />
+          </Key>
+          <Property Name="grade" Type="Int32" Nullable="false" />
+          <Property Name="losal" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="hisal" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="CompanyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dept" EntityType="Self.dept" />
+          <EntitySet Name="emp" EntityType="Self.emp" />
+          <EntitySet Name="salgrade" EntityType="Self.salgrade" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CompanyDataContextStoreContainer" CdmEntityContainer="CompanyEntities">
+          <EntitySetMapping Name="dept">
+            <EntityTypeMapping TypeName="CompanyDataContext.dept">
+              <MappingFragment StoreEntitySet="dept">
+                <ScalarProperty Name="deptno" ColumnName="deptno" />
+                <ScalarProperty Name="dname" ColumnName="dname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="emp">
+            <EntityTypeMapping TypeName="CompanyDataContext.emp">
+              <MappingFragment StoreEntitySet="emp">
+                <ScalarProperty Name="empno" ColumnName="empno" />
+                <ScalarProperty Name="ename" ColumnName="ename" />
+                <ScalarProperty Name="job" ColumnName="job" />
+                <ScalarProperty Name="mgr" ColumnName="mgr" />
+                <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+                <ScalarProperty Name="sal" ColumnName="sal" />
+                <ScalarProperty Name="comm" ColumnName="comm" />
+                <ScalarProperty Name="deptno" ColumnName="deptno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salgrade">
+            <EntityTypeMapping TypeName="CompanyDataContext.salgrade">
+              <MappingFragment StoreEntitySet="salgrade">
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="losal" ColumnName="losal" />
+                <ScalarProperty Name="hisal" ColumnName="hisal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
