@@ -19,7 +19,11 @@ namespace CompanyManagement.ViewModels
         #region DataStores 
         private readonly DepartmentDataStore departmentDataStore;
         #endregion
-
+        private string _tekshir = "TEkshirildi";
+        public string Tekshir { 
+            get => _tekshir;
+            set => SetProperty(ref _tekshir, value);
+        } 
 
         #region ICommmands
         public ICommand AddDepartment { get; private set; }

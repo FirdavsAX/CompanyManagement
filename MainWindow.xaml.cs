@@ -26,6 +26,7 @@ namespace CompanyManagement
     {
         public readonly EmployeeDataStore employeeDataStore;
         public  List<emp> Employees1 = new List<emp>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace CompanyManagement
             employeeDataStore = new EmployeeDataStore();
             
             DataContext = new MainWindowViewModel();
+           
          }
 
         

@@ -102,6 +102,9 @@
     <Compile Include="Views\AddOrEditEmployee.xaml.cs">
       <DependentUpon>AddOrEditEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DepartmentTabItemView.xaml.cs">
+      <DependentUpon>DepartmentTabItemView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddOrEditEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DepartmentTabItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

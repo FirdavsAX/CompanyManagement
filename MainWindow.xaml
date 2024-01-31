@@ -93,7 +93,9 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Department">
+            <TabItem Header="Department"
+                     x:Name="DepartmnetTabItem"
+                     DataContext="{Binding DepartmentMainWindowViewModel}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -101,7 +103,7 @@
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="1"
-                               Text="PDD Academy"
+                               Text="{Binding Tekshir}"
                                HorizontalAlignment="Center"
                                TextAlignment="Center"
                                FontSize="20"
